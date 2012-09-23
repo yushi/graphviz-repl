@@ -1,0 +1,39 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+  body
+    script(type='text/javascript', src='/javascripts/jquery-1.8.1.min.js')
+    script(type='text/javascript', src='/javascripts/graphweb.js')
+    script(type='text/javascript', src='/javascripts/bootstrap.min.js')
+    div(class="navbar navbar-fixed-top")
+      div(class="navbar-inner")
+        a(class="brand", href="#") &nbsp; Graphviz-Viewer
+        ul(class="nav")
+          li(class="dropdown")
+            a(href='#', class='dropdown-toggle', data-toggle='dropdown') Layout
+            ul(class='dropdown-menu')
+              li
+                a(onclick='javascript:setType(this)', type='dot')
+                  span ✓
+                  |dot
+              li
+                a(onclick='javascript:setType(this)', type='neato')
+                  span 　
+                  |neato
+              li
+                a(onclick='javascript:setType(this)', type='circo')
+                  span 　
+                  | circo
+              li
+                a(onclick='javascript:setType(this)', type='fdp')
+                  span 　
+                  | fdp
+              li
+                a(onclick='javascript:setType(this)', type='sfdp')
+                  span 　
+                  | sfdp
+
+    block content
