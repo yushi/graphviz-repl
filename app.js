@@ -5,7 +5,15 @@ var express = require('express')
   , fs = require('fs')
   , optimist = require('optimist')
   , argv = optimist
-           .usage('Graphviz REPL.\nUsage: $0 [--dot /path/to/dot] [--addr LISTEN_ADDR] [--port PORT]')
+           .usage('Usage: $0 [-d PATH] [-a LISTEN_ADDR] [-p PORT]')
+           .alias('d', 'dot')
+           .alias('a', 'addr')
+           .alias('p', 'port')
+           .describe('d', 'dot command path')
+           .describe('a', 'listen address')
+           .describe('p', 'listen port')
+           .default('a', '127.0.0.1')
+           .default('p', "3000")
            .argv;
 
 if(argv.h || argv.help){
@@ -15,7 +23,7 @@ if(argv.h || argv.help){
 var app = express();
 
 app.configure(function(){
-  app.set('port', argv.port || 3000)
+  app.set('port', parseInt(argv.port))
   app.set('addr', argv.addr || 'localhost')
   app.set('views', __dirname + '/views')
   app.set('view engine', 'jade')
@@ -42,7 +50,8 @@ function findDotPath(){
       return cands[i]
     }
   }
-  throw new Error('dot executable not found')
+  console.error('dot executable not found.\nplease install graphviz or -d option')
+  process.exit(-1)
 }
 
 routes.setDotPath(findDotPath())
@@ -51,7 +60,7 @@ app.post('/compile.b64', routes.compile_to_base64)
 
 http.createServer(app).listen(
   app.get('port'),
-  argv.addr || 'localhost',
+  argv.addr,
   function(){
     console.log(['server listening on', app.get('addr'), app.get('port')].join(' '));
   });
