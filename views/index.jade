@@ -8,10 +8,10 @@ block content
           |digraph noname {
           |    node[shape=box]
           |    graph[nodesep=2, ranksep=2]
-          |    graphviz_viewer [label="Graphviz-Viewer"]
+          |    graphviz_repl [label="Graphviz-REPL"]
           |    you[label="You", shape=circle]
-          |    graphviz_viewer -> you[label="welcome"]
-          |    {rank=same; graphviz_viewer; you}
+          |    graphviz_repl -> you[label="welcome"]
+          |    {rank=same; graphviz_repl; you}
           |}
       div(class="span5")
         pre(id="msg", class="alert alert-block")
