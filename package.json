@@ -9,6 +9,11 @@
     "jade": "*",
     "optimist": "*"
   },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "visionmedia-jscoverage": "*"
+  },
   "description": "REPL WebUI for Graphviz",
   "main": "app.js",
   "repository": {
@@ -19,5 +24,10 @@
     "graphviz"
   ],
   "author": "yushi",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "pretest": "./node_modules/visionmedia-jscoverage/jscoverage lib lib-cov",
+    "test": "[ -n \"$TEST_COV\" ] && mocha --reporter html-cov > coverage.html || mocha",
+    "posttest": "rm -rf ./lib-cov"
+  }
 }

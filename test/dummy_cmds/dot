@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+process.stdin.on('data', function(data){
+  console.log(
+    JSON.stringify(
+      {'argv': process.argv.pop()
+      ,'stdin': data.toString()}
+    )
+  )
+}).resume()
