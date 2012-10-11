@@ -11,8 +11,7 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "*",
-    "visionmedia-jscoverage": "*"
+    "should": "*"
   },
   "description": "REPL WebUI for Graphviz",
   "main": "app.js",
@@ -26,8 +25,6 @@
   "author": "yushi",
   "license": "MIT",
   "scripts": {
-    "pretest": "./node_modules/visionmedia-jscoverage/jscoverage lib lib-cov",
-    "test": "[ -n \"$TEST_COV\" ] && mocha --reporter html-cov > coverage.html || mocha",
-    "posttest": "rm -rf ./lib-cov"
+    "test": "make test"
   }
 }
