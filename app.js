@@ -6,14 +6,19 @@ var express = require('express')
   , optimist = require('optimist')
   , argv = optimist
            .usage('Usage: $0 [-d PATH] [-a LISTEN_ADDR] [-p PORT]')
-           .alias('d', 'dot')
-           .alias('a', 'addr')
-           .alias('p', 'port')
-           .describe('d', 'dot command path')
-           .describe('a', 'listen address')
-           .describe('p', 'listen port')
-           .default('a', '127.0.0.1')
-           .default('p', "3000")
+           .alias(
+             {'d': 'dot'
+             ,'a': 'addr'
+             ,'p': 'port'
+             })
+           .describe(
+             {'d': 'dot command path'
+             ,'a': 'listen address'
+             ,'p': 'listen port'
+             })
+           .default(
+             {'a': '127.0.0.1'
+             ,'p': "3000"})
            .argv;
 
 if(argv.h || argv.help){
@@ -50,7 +55,8 @@ function findDotPath(){
       return cands[i]
     }
   }
-  console.error('dot executable not found.\nplease install graphviz or specify the dot path by -d option')
+  console.error('dot executable not found.')
+  console.error('please install graphviz or specify the dot path by -d option')
   process.exit(-1)
 }
 
