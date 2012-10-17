@@ -10,7 +10,7 @@ exports.setDotPath = function(path){
 }
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' })
+  res.render('index', { title: 'Graphviz REPL' })
 }
 
 exports.compile_to_base64 = function(req, res){

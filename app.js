@@ -50,7 +50,7 @@ function findDotPath(){
       return cands[i]
     }
   }
-  console.error('dot executable not found.\nplease install graphviz or -d option')
+  console.error('dot executable not found.\nplease install graphviz or specify the dot path by -d option')
   process.exit(-1)
 }
 
