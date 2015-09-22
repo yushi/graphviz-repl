@@ -4,6 +4,9 @@ REPL WebUI for Graphviz
 
 ## Casey's Patched Version
 
+![Example Screenshot](/example_graph.png?raw=true)
+
+
 ## Installation & Usage - from Github Repo binary
 
   ```
