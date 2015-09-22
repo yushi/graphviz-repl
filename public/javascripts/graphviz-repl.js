@@ -103,6 +103,6 @@ function defaultData() {
 $(document).ready(function(){
   $('#dot').focus()
   $('#dot').val(loadDotData())
-  setInterval(autoCompileDo, 1000)
+  setInterval(autoCompileDo, 500)
 })
 
