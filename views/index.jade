@@ -1,8 +1,6 @@
 extends layout
 
 block content
-  div(class="row")
-    pre(id="msg", class="alert alert-block")
   dif(id="everything", class="row")
     div(id="editor", class="span6")
       textarea(class="span6", id='dot', rows='20')
@@ -16,3 +14,5 @@ block content
         |}
     div(id="render", class="span6")
       img(id='graph')
+  div(class="row")
+    pre(id="msg", class="alert alert-block")
