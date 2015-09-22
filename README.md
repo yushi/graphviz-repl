@@ -1,17 +1,29 @@
 # Graphviz REPL
-REPL WebUI for Graphviz[![Build Status](https://travis-ci.org/yushi/graphviz-repl.png)](https://travis-ci.org/yushi/graphviz-repl)
+REPL WebUI for Graphviz
 
 
+## Casey's Patched Version
 
-## Install
+## Installation & Usage - from Github Repo binary
 
- $ npm install -g graphviz-repl
+  ```
+  git clone git@github.com:caseywatts/graphviz-repl.git
+  cd graphviz-repl
+  bin/graphviz-repl
+  ```
 
-## Usage
+  and open http://localhost:3000/
 
- $ graphviz-repl
+## Installation & Usage - as a globally installed npm module
 
- and open http://localhost:3000/
+  ```
+  git clone git@github.com:caseywatts/graphviz-repl.git
+  cd graphviz-repl
+  npm install -g .
+  graphviz-repl
+  ```
+
+  and open http://localhost:3000/
 
 ## License - "MIT License"
     
