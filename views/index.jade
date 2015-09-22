@@ -4,14 +4,6 @@ block content
   dif(id="everything", class="row")
     div(id="editor", class="span6")
       textarea(class="span6", id='dot', rows='20')
-        |digraph noname {
-        |    node[shape=box]
-        |    graph[nodesep=2, ranksep=2]
-        |    graphviz_repl [label="Graphviz-REPL"]
-        |    you[label="You", shape=circle]
-        |    graphviz_repl -> you[label="welcome"]
-        |    {rank=same; graphviz_repl; you}
-        |}
     div(id="render", class="span6")
       img(id='graph' style='max-height:80vh')
   div(class="row")
