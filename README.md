@@ -1,32 +1,40 @@
 # Graphviz REPL
-REPL WebUI for Graphviz
-
-
-## Casey's Patched Version
+Graphviz-REPL gives you a two-pane interface for quickly creating and iterating through graphviz diagrams. You type DOT syntax on the left, and the image will appear on the right after just a moment.
 
 ![Example Screenshot](/example_graph.png?raw=true)
 
 
-## Installation & Usage - from Github Repo binary
+## Installation & Usage
+### Via Github Repo binary
 
-  ```
-  git clone git@github.com:caseywatts/graphviz-repl.git
-  cd graphviz-repl
-  bin/graphviz-repl
-  ```
+```
+git clone git@github.com:caseywatts/graphviz-repl.git
+cd graphviz-repl
+bin/graphviz-repl
+```
 
-  and open http://localhost:3000/
+and open http://localhost:3000/
 
-## Installation & Usage - as a globally installed npm module
+### Via npm
 
-  ```
-  git clone git@github.com:caseywatts/graphviz-repl.git
-  cd graphviz-repl
-  npm install -g .
-  graphviz-repl
-  ```
+```
+npm install -g graphviz-repl
+graphviz-repl
+```
 
-  and open http://localhost:3000/
+and open http://localhost:3000/
+
+### Locally modified version, but still via npm
+In case you want to tweak this for your own needs and also have it installed as a global npm module.
+
+```
+git clone git@github.com:caseywatts/graphviz-repl.git
+cd graphviz-repl
+npm install -g .
+graphviz-repl
+```
+
+and open http://localhost:3000/
 
 ## License - "MIT License"
     
