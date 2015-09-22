@@ -1,19 +1,18 @@
 extends layout
 
 block content
-  div(id="editor", class="span12")
-    div(class="row")
-      div(class="span7")
-        textarea(class="span7", id='dot', rows='20')
-          |digraph noname {
-          |    node[shape=box]
-          |    graph[nodesep=2, ranksep=2]
-          |    graphviz_repl [label="Graphviz-REPL"]
-          |    you[label="You", shape=circle]
-          |    graphviz_repl -> you[label="welcome"]
-          |    {rank=same; graphviz_repl; you}
-          |}
-      div(class="span5")
-        pre(id="msg", class="alert alert-block")
-  div(id="render", class="span12")
-    img(id='graph')
+  div(class="row")
+    pre(id="msg", class="alert alert-block")
+  dif(id="everything", class="row")
+    div(id="editor", class="span6")
+      textarea(class="span6", id='dot', rows='20')
+        |digraph noname {
+        |    node[shape=box]
+        |    graph[nodesep=2, ranksep=2]
+        |    graphviz_repl [label="Graphviz-REPL"]
+        |    you[label="You", shape=circle]
+        |    graphviz_repl -> you[label="welcome"]
+        |    {rank=same; graphviz_repl; you}
+        |}
+    div(id="render", class="span6")
+      img(id='graph')
