@@ -79,7 +79,7 @@ function autoCompileDo(){
 
 function loadDotData() {
   var _data = localStorage.getItem('dotData');
-  if (_data.trim() != "")
+  if (_data != null && _data.trim() != "")
     return _data
   else
     return defaultData()
