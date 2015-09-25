@@ -5,9 +5,9 @@
     "graphviz-repl": "./bin/graphviz-repl"
   },
   "dependencies": {
-    "express": "3.0.0rc4",
-    "jade": "1.3.1",
-    "optimist": "0.6.1"
+    "express": "^3.0.0",
+    "jade": "^1.3.1",
+    "optimist": "^0.6.1"
   },
   "devDependencies": {
     "mocha": "*",
