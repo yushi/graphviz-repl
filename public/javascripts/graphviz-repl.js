@@ -65,6 +65,7 @@ function autoCompileDo(){
   if(_dotData != $('#dot').val()){
     needCompile = true;
     _dotData = $('#dot').val()
+    cacheDotData(_dotData)
   }
 
   if(!needCompile){
@@ -76,7 +77,32 @@ function autoCompileDo(){
           })
 }
 
+function loadDotData() {
+  var _data = localStorage.getItem('dotData');
+  if (_data != null && _data.trim() != "")
+    return _data
+  else
+    return defaultData()
+}
+
+function cacheDotData(data) {
+  localStorage.setItem('dotData', data)
+}
+
+function defaultData() {
+  return ['digraph noname {',
+    '   node[shape=box]',
+    '   graph[nodesep=2, ranksep=2]',
+    '   graphviz_repl [label="Graphviz-REPL"]',
+    '   you[label="You", shape=circle]',
+    '   graphviz_repl -> you[label="welcome"]',
+    '   {rank=same; graphviz_repl; you}',
+    '}'].join("\n");
+}
+
 $(document).ready(function(){
   $('#dot').focus()
-  setInterval(autoCompileDo, 1000)
+  $('#dot').val(loadDotData())
+  setInterval(autoCompileDo, 500)
 })
+
